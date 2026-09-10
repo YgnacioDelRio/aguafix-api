@@ -1,5 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
-import type { Point } from "typeorm";
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 
 @Entity('WATER_REPORT')
@@ -22,6 +21,6 @@ export class Report{
     @Column()
     isResolved!: boolean;
 
-    @Column()
+    @CreateDateColumn({ type: 'timestamp' })
     createdAt!: Date;
 }

@@ -12,7 +12,7 @@ export class ReportService {
         private reportRepository : Repository<Report>
     ){}
 
-    async findAllReports(){
+    async findAllReports(): Promise<Report[]> {
         return await this.reportRepository.find();
     }
 
@@ -22,8 +22,7 @@ export class ReportService {
             description: dto.description,
             severity: dto.severity,
             reporterPhone: dto.reporterPhone,
-            isResolved: dto.isResolved,
-            createdAt: dto.createdAt
+            isResolved: dto.isResolved
         });
         return await this.reportRepository.save(report);
     }

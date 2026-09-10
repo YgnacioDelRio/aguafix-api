@@ -17,7 +17,7 @@ export class EmailService {
     async sendEmail(template:string){
         await this.transporter.sendMail({
             to:'arturoy.delrio@gmail.com',
-            subject:'test',
+            subject:'Aviso de fuga de agua',
             html: template
         });
     }

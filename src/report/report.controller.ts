@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { EmailService } from 'src/email/email.service';
 import { ReportService } from './report.service';
 import { CreateReportDto } from './dtos/create-report.dto';
@@ -16,5 +16,10 @@ export class ReportController {
         await this.emailService.sendEmail(template);
         const report = await this.reportService.createReport(createReportDto);
         return report;
+    }
+    
+    @Get()
+    async findAllReports() {
+        return await this.reportService.findAllReports();
     }
 }

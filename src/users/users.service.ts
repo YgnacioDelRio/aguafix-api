@@ -22,15 +22,9 @@ export class UsersService {
         const hashedPassword = await bcrypt.hash(dto.password,10);
         const user = this.userRepository.create({
             name: dto.name,
-            lastName: dto.lastName,
             email: dto.email,
             password: hashedPassword,
-            isPetAlertEnabled: dto.isPetAlertEnabled,
-            radius: dto.radius,
-            location:{
-                type: 'Point',
-                coordinates:[dto.lon,dto.lat]
-            }
+            isNotificationEnabled: dto.isNotificationEnabled
         });
         const saved = await this.userRepository.save(user);
         return saved.id;

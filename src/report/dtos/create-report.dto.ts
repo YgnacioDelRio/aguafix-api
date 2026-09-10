@@ -4,5 +4,4 @@ export class CreateReportDto{
     severity!: string;
     reporterPhone!: string;
     isResolved!: boolean;
-    createdAt!: Date;
 }
