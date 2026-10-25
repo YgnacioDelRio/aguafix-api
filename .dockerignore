@@ -1,6 +1,4 @@
 data
-Dockerfile
-compose.yaml
 
 # compiled output
 /dist
