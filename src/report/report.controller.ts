@@ -24,7 +24,7 @@ export class ReportController {
         @UploadedFile() file: any
     ){
         const url = await this.storageService.uploadFile(file,"reports");
-        const template = generateReportTemplate(createReportDto, url);   //ola
+        const template = generateReportTemplate(createReportDto, url);   //ola 2
         await this.emailService.sendEmail(template);
         const report = await this.reportService.createReport(createReportDto, url);
         return report;
