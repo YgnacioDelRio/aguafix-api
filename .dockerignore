@@ -1,4 +1,5 @@
 data
+Dockerfile
 
 # compiled output
 /dist
