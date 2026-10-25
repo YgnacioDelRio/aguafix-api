@@ -16,13 +16,14 @@ export class ReportService {
         return await this.reportRepository.find();
     }
 
-    async createReport(dto: CreateReportDto){
+    async createReport(dto: CreateReportDto, url?:string){
         const report = this.reportRepository.create({
             address: dto.address,
             description: dto.description,
             severity: dto.severity,
             reporterPhone: dto.reporterPhone,
-            isResolved: dto.isResolved
+            isResolved: dto.isResolved,
+            photoUrl: url
         });
         return await this.reportRepository.save(report);
     }

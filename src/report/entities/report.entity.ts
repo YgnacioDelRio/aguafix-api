@@ -23,4 +23,9 @@ export class Report{
 
     @CreateDateColumn({ type: 'timestamp' })
     createdAt!: Date;
+
+    @Column({
+        nullable: true
+    })
+    photoUrl?:String;
 }
